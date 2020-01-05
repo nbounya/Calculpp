@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="probability_list">
+        <item>Probabilities</item>
+        <item>Permutations &amp; Combinations</item>
+    </string-array>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="area_list">
+        <item>Circle</item>
+        <item>Ellipse</item>
+        <item>Parallelogram</item>
+        <item>Rectangle</item>
+        <item>Square</item>
+        <item>Trapezoid</item>
+        <item>Triangle (with 3 Edges)</item>
+        <item>Triangle (with Base and Height)</item>
+    </string-array>
+</resources>

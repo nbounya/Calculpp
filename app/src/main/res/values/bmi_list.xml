@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bmi_list">
+        <item>BMI in Metric units</item>
+        <item>BMI in Imperial units</item>
+        <item>Ideal Weight in Metric Units</item>
+        <item>Ideal Weight in Imperial Units</item>
+    </string-array>
+</resources>

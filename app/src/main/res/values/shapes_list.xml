@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="shapes_list">
+        <item>Cube</item>
+        <item>Cuboid</item>
+        <item>Sphere</item>
+        <item>Pyramid</item>
+        <item>Cylinder</item>
+        <item>Cone</item>
+    </string-array>
+</resources>

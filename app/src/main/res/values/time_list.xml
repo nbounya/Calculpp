@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="time_list">
+    <item>Calculate days between dates</item>
+    <item>Add or subtract days from date</item>>
+    </string-array>
+</resources>
