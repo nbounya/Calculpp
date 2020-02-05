@@ -1,4 +1,4 @@
-package com.example.calculpp;
+package com.nassim.calculpp;
 
 import android.app.Activity;
 import android.view.LayoutInflater;

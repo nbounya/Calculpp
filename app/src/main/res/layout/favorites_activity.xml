@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:tag="fragmentContainer"
-    tools:context="com.example.calculpp.FavoritesActivity">
+    tools:context="com.nassim.calculpp.FavoritesActivity">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

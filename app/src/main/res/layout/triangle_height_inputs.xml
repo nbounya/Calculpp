@@ -24,6 +24,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="44dp"
         android:text="Result :"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.029"
         app:layout_constraintStart_toEndOf="@+id/calculateTriangleHeightAreaButton"
@@ -33,8 +34,10 @@
         android:id="@+id/triangleAreaHeightResultNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="44dp"
+        android:text="0.00"
+        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/triangleAreaHeightResultText"
         app:layout_constraintTop_toBottomOf="@+id/triangleAreaHeightHeightNumber" />
 

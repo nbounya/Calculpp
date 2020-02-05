@@ -1,11 +1,14 @@
-package com.example.calculpp;
+package com.nassim.calculpp;
 
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class Methods {
+    static DecimalFormat form = new DecimalFormat("0.000");
+
     static String[] addTime(int day1, int hour1, int min1, double sec1, int day2, int hour2, int min2, double sec2){
         int day3, hour3, min3;
         double sec3;
@@ -33,7 +36,7 @@ public class Methods {
 
         day3 = day1 + day2;
 
-        String[] result = {String.valueOf(day3), String.valueOf(hour3), String.valueOf(min3), String.valueOf(sec3)};
+        String[] result = {form.format(day3), form.format(hour3), form.format(min3), form.format(sec3)};
 
         return result;
     }

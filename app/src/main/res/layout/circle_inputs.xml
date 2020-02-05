@@ -49,6 +49,7 @@
         android:layout_marginStart="84dp"
         android:layout_marginTop="52dp"
         android:text="Result :"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toEndOf="@+id/calculatecircleAreaButton"
@@ -60,6 +61,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="52dp"
+        android:text="0.00"
+        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/circleAreaResultText"
         app:layout_constraintTop_toBottomOf="@+id/circleRadiusAreaText" />
 

@@ -1,4 +1,4 @@
-package com.example.calculpp;
+package com.nassim.calculpp;
 
 import android.content.Context;
 import android.content.Intent;
@@ -20,43 +20,45 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import static com.example.calculpp.Methods.addSubtractDate;
-import static com.example.calculpp.Methods.calculateAverage;
-import static com.example.calculpp.Methods.calculateBMI;
-import static com.example.calculpp.Methods.calculateCombination;
-import static com.example.calculpp.Methods.calculateConeVolume;
-import static com.example.calculpp.Methods.calculateCount;
-import static com.example.calculpp.Methods.calculateCubeVolume;
-import static com.example.calculpp.Methods.calculateCuboidVolume;
-import static com.example.calculpp.Methods.calculateCylinderVolume;
-import static com.example.calculpp.Methods.calculateDaysBetweenDates;
-import static com.example.calculpp.Methods.calculateGeometricMean;
-import static com.example.calculpp.Methods.calculateIdealWeight;
-import static com.example.calculpp.Methods.calculateLargest;
-import static com.example.calculpp.Methods.calculateMedian;
-import static com.example.calculpp.Methods.calculatePermutation;
-import static com.example.calculpp.Methods.calculatePopulationStandardDeviation;
-import static com.example.calculpp.Methods.calculatePyramidVolume;
-import static com.example.calculpp.Methods.calculateRange;
-import static com.example.calculpp.Methods.calculateSampleStandardDeviation;
-import static com.example.calculpp.Methods.calculateSampleVariance;
-import static com.example.calculpp.Methods.calculateSmallest;
-import static com.example.calculpp.Methods.calculateSphereVolume;
-import static com.example.calculpp.Methods.calculateSum;
-import static com.example.calculpp.Methods.calculateVariance;
+import static com.nassim.calculpp.Methods.addSubtractDate;
+import static com.nassim.calculpp.Methods.calculateAverage;
+import static com.nassim.calculpp.Methods.calculateBMI;
+import static com.nassim.calculpp.Methods.calculateCombination;
+import static com.nassim.calculpp.Methods.calculateConeVolume;
+import static com.nassim.calculpp.Methods.calculateCount;
+import static com.nassim.calculpp.Methods.calculateCubeVolume;
+import static com.nassim.calculpp.Methods.calculateCuboidVolume;
+import static com.nassim.calculpp.Methods.calculateCylinderVolume;
+import static com.nassim.calculpp.Methods.calculateDaysBetweenDates;
+import static com.nassim.calculpp.Methods.calculateGeometricMean;
+import static com.nassim.calculpp.Methods.calculateIdealWeight;
+import static com.nassim.calculpp.Methods.calculateLargest;
+import static com.nassim.calculpp.Methods.calculateMedian;
+import static com.nassim.calculpp.Methods.calculatePermutation;
+import static com.nassim.calculpp.Methods.calculatePopulationStandardDeviation;
+import static com.nassim.calculpp.Methods.calculatePyramidVolume;
+import static com.nassim.calculpp.Methods.calculateRange;
+import static com.nassim.calculpp.Methods.calculateSampleStandardDeviation;
+import static com.nassim.calculpp.Methods.calculateSampleVariance;
+import static com.nassim.calculpp.Methods.calculateSmallest;
+import static com.nassim.calculpp.Methods.calculateSphereVolume;
+import static com.nassim.calculpp.Methods.calculateSum;
+import static com.nassim.calculpp.Methods.calculateVariance;
 import static java.lang.Math.sqrt;
 
 public class DisplayAllInputsActivity extends AppCompatActivity {
     public static final String BACK_REFRESH = "com.example.myfirstapp.BACK_REFRESH";
     public String dataPublic;
     public String dataTab;
+    static DecimalFormat form = new DecimalFormat("0.00");
+    static DecimalFormat form1 = new DecimalFormat("0.0");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +79,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
                     shapesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     shapesList.setAdapter(shapesAdapter);
                     final ImageView shapeIcon = (ImageView) findViewById(R.id.shapeIcon);
-                    final ConstraintLayout shapeInputs = findViewById(R.id.shapeInputs);
+                    final ScrollView shapeInputs = findViewById(R.id.shapeInputs);
 
                     switch(data[1]){
                         case "default":
@@ -171,7 +173,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
                     timeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     timeList.setAdapter(timeAdapter);
                     final ImageView timeIcon = (ImageView) findViewById(R.id.timeIcon);
-                    final ConstraintLayout timeInputs = findViewById(R.id.timeInputs);
+                    final ScrollView timeInputs = findViewById(R.id.timeInputs);
 
                     switch(data[1]){
                         case "default":
@@ -225,7 +227,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
                     bmiAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     bmiList.setAdapter(bmiAdapter);
                     final ImageView bmiIcon = (ImageView) findViewById(R.id.bmiIcon);
-                    final ConstraintLayout bmiInputs = findViewById(R.id.bmiInputs);
+                    final ScrollView bmiInputs = findViewById(R.id.bmiInputs);
 
                     switch(data[1]){
                         case "default":
@@ -296,7 +298,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
                     ArrayAdapter<CharSequence> statisticsAdapter = ArrayAdapter.createFromResource(this, R.array.bmi_list,
                             android.R.layout.simple_spinner_item);
                     statisticsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    final ConstraintLayout statisticsinputs = findViewById(R.id.statisticsinputs);
+                    final ScrollView statisticsinputs = findViewById(R.id.statisticsinputs);
 
                     statisticsinputs.addView(View.inflate(this, R.layout.statistics_inputs, null));
                     break;
@@ -362,7 +364,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
                     ohmAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     ohmList.setAdapter(ohmAdapter);
                     final ImageView ohmIcon = (ImageView) findViewById(R.id.ohmIcon);
-                    final ConstraintLayout ohminputs = findViewById(R.id.ohminputs);
+                    final ScrollView ohminputs = findViewById(R.id.ohminputs);
                     ohminputs.addView(View.inflate(this, R.layout.current_inputs, null));
 
                     switch(data[1]){
@@ -427,7 +429,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
                     areaAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     areaList.setAdapter(areaAdapter);
                     final ImageView areaIcon = (ImageView) findViewById(R.id.areaIcon);
-                    final ConstraintLayout areainputs = findViewById(R.id.areaInputs);
+                    final ScrollView areainputs = findViewById(R.id.areaInputs);
 
                     switch(data[1]){
                         case "default":
@@ -576,7 +578,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
 
         double length = Double.parseDouble(cubeSideLengthText);
         double cubeVolume = calculateCubeVolume(length);
-        String cubeVolumeString = Double.toString(cubeVolume);
+        String cubeVolumeString = form.format(cubeVolume);
         cubeVolumeResult.setText(cubeVolumeString);
     }
 
@@ -599,7 +601,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
         double length2 = Double.parseDouble(cubeSideLength2Text);
         double length3 = Double.parseDouble(cubeSideLength3Text);
         double cuboidVolume = calculateCuboidVolume(length1, length2, length3);
-        String cuboidVolumeString = Double.toString(cuboidVolume);
+        String cuboidVolumeString = form.format(cuboidVolume);
         cubeVolumeResult.setText(cuboidVolumeString);
     }
 
@@ -616,7 +618,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
 
         double radius = Double.parseDouble(sphereRadiusNumberText);
         double sphereVolume = calculateSphereVolume(radius);
-        String sphereVolumeString = Double.toString(sphereVolume);
+        String sphereVolumeString = form.format(sphereVolume);
         sphereResultNumber.setText(sphereVolumeString);
     }
 
@@ -639,7 +641,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
         double width = Double.parseDouble(pyramidWidthNumberText);
         double heigth = Double.parseDouble(pyramidHeightNumberText);
         double pyramidVolume = calculatePyramidVolume(length, width, heigth);
-        String pyramidVolumeString = Double.toString(pyramidVolume);
+        String pyramidVolumeString = form.format(pyramidVolume);
         pyramidResultNumber.setText(pyramidVolumeString);
     }
 
@@ -659,7 +661,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
         double radius = Double.parseDouble(cylinderRadiusNumberText);
         double height = Double.parseDouble(cylinderHeightNumberText);
         double cylinderVolume = calculateCylinderVolume(radius, height);
-        String cylinderVolumeString = Double.toString(cylinderVolume);
+        String cylinderVolumeString = form.format(cylinderVolume);
         cylinderResultNumber.setText(cylinderVolumeString);
     }
 
@@ -679,7 +681,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
         double radius = Double.parseDouble(coneRadiusNumberText);
         double height = Double.parseDouble(coneHeightNumberText);
         double coneVolume = calculateConeVolume(radius, height);
-        String coneVolumeString = Double.toString(coneVolume);
+        String coneVolumeString = form.format(coneVolume);
         coneResultNumber.setText(coneVolumeString);
     }
 
@@ -779,7 +781,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
         double height = Double.parseDouble(heightMetricBMINumberText);
 
         double bmi = calculateBMI(weight, height, true);
-        String bmiString = Double.toString(bmi);
+        String bmiString = form.format(bmi);
         resultMetricBMINumber.setText(bmiString);
     }
 
@@ -801,7 +803,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
         double height = Double.parseDouble(heightImperialBMINumberText);
 
         double bmi = calculateBMI(weight, height, false);
-        String bmiString = Double.toString(bmi);
+        String bmiString = form.format(bmi);
         resultImperialBMINumber.setText(bmiString);
     }
 
@@ -820,7 +822,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
         double height = Double.parseDouble(resultIdealMetricNumberText);
 
         double[] weight = calculateIdealWeight(height, true);
-        String weightString = weight[0] + "kg to " + weight[1] + "kg";
+        String weightString = form1.format(weight[0]) + "kg to " + form1.format(weight[1]) + "kg";
         resultIdealMetricNumber.setText(weightString);
     }
 
@@ -839,7 +841,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
         double height = Double.parseDouble(resultIdealImperialNumberText);
 
         double[] weight = calculateIdealWeight(height, false);
-        String weightString = weight[0] + "lbs to " + weight[1] + "lbs";
+        String weightString = form1.format(weight[0]) + "lbs to " + form1.format(weight[1]) + "lbs";
         resultIdealImperialNumber.setText(weightString);
     }
 
@@ -880,17 +882,17 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
         }
 
         countStatisticsNumber.setText(Integer.toString(calculateCount(values)));
-        sumStatisticsNumber.setText(Double.toString(calculateSum(values)));
-        meanStatisticsNumber.setText(Double.toString(calculateAverage(values)));
-        medianStatisticsNumber.setText(Double.toString(calculateMedian(values)));
-        largestStatisticsNumber.setText(Double.toString(calculateLargest(values)));
-        smallestStatisticsNumber.setText(Double.toString(calculateSmallest(values)));
-        rangeStatisticsNumber.setText(Double.toString(calculateRange(values)));
-        geometricStatisticsNumber.setText(Double.toString(calculateGeometricMean(values)));
-        sdStatisticsNumber.setText(Double.toString(calculatePopulationStandardDeviation(values)));
-        varianceStatisticsNumber.setText(Double.toString(calculateVariance(values)));
-        samplesdStatisticsNumber.setText(Double.toString(calculateSampleStandardDeviation(values)));
-        sampleVarianceStatisticsNumber.setText(Double.toString(calculateSampleVariance(values)));
+        sumStatisticsNumber.setText(form.format(calculateSum(values)));
+        meanStatisticsNumber.setText(form.format(calculateAverage(values)));
+        medianStatisticsNumber.setText(form.format(calculateMedian(values)));
+        largestStatisticsNumber.setText(form.format(calculateLargest(values)));
+        smallestStatisticsNumber.setText(form.format(calculateSmallest(values)));
+        rangeStatisticsNumber.setText(form.format(calculateRange(values)));
+        geometricStatisticsNumber.setText(form.format(calculateGeometricMean(values)));
+        sdStatisticsNumber.setText(form.format(calculatePopulationStandardDeviation(values)));
+        varianceStatisticsNumber.setText(form.format(calculateVariance(values)));
+        samplesdStatisticsNumber.setText(form.format(calculateSampleStandardDeviation(values)));
+        sampleVarianceStatisticsNumber.setText(form.format(calculateSampleVariance(values)));
     }
 
     public void displayProbabilityValues (View view){
@@ -920,12 +922,12 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
         double AorBNotBoth = Double.parseDouble(probabilityA) + Double.parseDouble(probabilityB) - (2 * AandB);
         double AnorB = 1 - AorB;
 
-        notANumber.setText(Double.toString(notA));
-        notBNumber.setText(Double.toString(notB));
-        AandBNumber.setText(Double.toString(AandB));
-        AorBNumber.setText(Double.toString(AorB));
-        AorBNotBothNumber.setText(Double.toString(AorBNotBoth));
-        AnorBNumber.setText(Double.toString(AnorB));
+        notANumber.setText(form.format(notA));
+        notBNumber.setText(form.format(notB));
+        AandBNumber.setText(form.format(AandB));
+        AorBNumber.setText(form.format(AorB));
+        AorBNotBothNumber.setText(form.format(AorBNotBoth));
+        AnorBNumber.setText(form.format(AnorB));
     }
 
     public void displayPermutationValues (View view){
@@ -975,7 +977,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
 
         double i = v/r;
 
-        currentResultNumber.setText(Double.toString(i));
+        currentResultNumber.setText(form.format(i));
     }
 
     public void displayResistanceValues (View view){
@@ -999,7 +1001,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
 
         double r = v/i;
 
-        resistanceResultNumber.setText(Double.toString(r));
+        resistanceResultNumber.setText(form.format(r));
     }
 
     public void displayVoltageValues (View view){
@@ -1022,7 +1024,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
 
         double v = r*i;
 
-        voltageResultNumber.setText(Double.toString(v));
+        voltageResultNumber.setText(form.format(v));
     }
 
     public void displayCircleArea(View view){
@@ -1040,7 +1042,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
         double r = Double.parseDouble(circleAreaSide);
         double v = Math.PI * r * r;
 
-        circleAreaResultNumber.setText(Double.toString(v));
+        circleAreaResultNumber.setText(form.format(v));
     }
 
     public void displayEllipseArea(View view){
@@ -1063,7 +1065,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
 
         double v = Math.PI * major * minor;
 
-        ellipseAreaResultNumber.setText(Double.toString(v));
+        ellipseAreaResultNumber.setText(form.format(v));
     }
 
     public void displayParallelogramArea(View view){
@@ -1086,7 +1088,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
 
         double v = h * b;
 
-        parallelogramAreaHeightResultNumber.setText(Double.toString(v));
+        parallelogramAreaHeightResultNumber.setText(form.format(v));
     }
 
     public void displayRectangleArea(View view){
@@ -1109,7 +1111,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
 
         double v = a * b;
 
-        triangleAreaEdgeResultNumber.setText(Double.toString(v));
+        triangleAreaEdgeResultNumber.setText(form.format(v));
     }
 
     public void displaySquareArea(View view){
@@ -1128,7 +1130,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
 
         double v = a * a;
 
-        squareAreaEdgeResultNumber.setText(Double.toString(v));
+        squareAreaEdgeResultNumber.setText(form.format(v));
     }
 
     public void displayTrapezoidArea(View view){
@@ -1153,7 +1155,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
         double b = Double.parseDouble(trapezoidAreaBase2);
         double v = ((a + b) / 2) * h;
 
-        trapezoidAreaResultNumber.setText(Double.toString(v));
+        trapezoidAreaResultNumber.setText(form.format(v));
     }
 
     public void displayTriangleEdgeArea(View view){
@@ -1180,7 +1182,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
 
         double v = sqrt(s * (s-a) * (s-b) * (s-c));
 
-        triangleAreaEdgeResultNumber.setText(Double.toString(v));
+        triangleAreaEdgeResultNumber.setText(form.format(v));
     }
 
     public void displayTriangleHeightArea(View view){
@@ -1202,7 +1204,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
 
         double v = (h * b) / 2;
 
-        triangleAreaHeightResultNumber.setText(Double.toString(v));
+        triangleAreaHeightResultNumber.setText(form.format(v));
     }
 
     public void AddFavorites(View view){

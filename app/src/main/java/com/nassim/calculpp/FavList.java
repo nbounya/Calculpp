@@ -1,4 +1,4 @@
-package com.example.calculpp;
+package com.nassim.calculpp;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-import static com.example.calculpp.DisplayAllInputsActivity.BACK_REFRESH;
+import static com.nassim.calculpp.DisplayAllInputsActivity.BACK_REFRESH;
 
 public class FavList extends ArrayAdapter<String>{
     public static final String UNFAV_REFRESH = "com.example.myfirstapp.UNFAV_REFRESH";

@@ -1,4 +1,4 @@
-package com.example.calculpp;
+package com.nassim.calculpp;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 
-import static com.example.calculpp.MainActivity.EXTRA_MESSAGE;
+import static com.nassim.calculpp.MainActivity.EXTRA_MESSAGE;
 
 public class AllActivity extends Fragment {
     String[] firstLine = {

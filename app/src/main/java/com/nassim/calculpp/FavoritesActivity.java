@@ -1,4 +1,4 @@
-package com.example.calculpp;
+package com.nassim.calculpp;
 
 import android.content.Context;
 import android.content.Intent;
@@ -18,7 +18,7 @@ import androidx.fragment.app.FragmentTransaction;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import static com.example.calculpp.MainActivity.EXTRA_MESSAGE;
+import static com.nassim.calculpp.MainActivity.EXTRA_MESSAGE;
 
 public class FavoritesActivity extends Fragment implements View.OnClickListener{
     HashMap<String, String> favFirstLine = new HashMap<String, String>();

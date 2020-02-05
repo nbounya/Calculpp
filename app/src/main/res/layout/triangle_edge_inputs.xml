@@ -87,6 +87,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="60dp"
         android:text="Result :"
+        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/calculateTriangleEdgeAreaButton"
         app:layout_constraintTop_toBottomOf="@+id/triangleAreaEdge3Text" />
 
@@ -94,9 +95,10 @@
         android:id="@+id/triangleAreaEdgeResultNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="60dp"
+        android:text="0.00"
+        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/triangleAreaEdgeResultText"
         app:layout_constraintTop_toBottomOf="@+id/triangleAreaEdge3Text" />
 

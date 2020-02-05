@@ -42,12 +42,12 @@
         android:id="@+id/resultIdealMetricText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="112dp"
         android:text="Result :"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/calculateIdealMetricButton"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/heightIdealMetricText" />
 
     <TextView
@@ -55,7 +55,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="112dp"
+        android:text="0.0 to 0.0"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/resultIdealMetricText"
         app:layout_constraintTop_toBottomOf="@+id/heightIdealMetricText" />
 
