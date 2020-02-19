@@ -9,7 +9,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity{
-    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.DISPLAYINPUTS";
+    public static final String EXTRA_MESSAGE = "com.nassim.calculpp.DISPLACALCULATOR";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +22,9 @@ public class MainActivity extends AppCompatActivity{
         final TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.setupWithViewPager(viewPager);
         Intent intent = getIntent();
-        String TabSelectedName = intent.getStringExtra(DisplayAllInputsActivity.BACK_REFRESH);
+        String TabSelectedName = intent.getStringExtra(DisplayCalculatorActivity.BACK_REFRESH);
 
+        //determines the default tab to select, if app just launched, default to the ALL tab
         if (TabSelectedName != null) {
             if (TabSelectedName.equals("all")) {
                 TabLayout.Tab tabSelected = tabLayout.getTabAt(1);

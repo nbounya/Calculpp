@@ -27,33 +27,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import static com.nassim.calculpp.Methods.addSubtractDate;
-import static com.nassim.calculpp.Methods.calculateAverage;
-import static com.nassim.calculpp.Methods.calculateBMI;
-import static com.nassim.calculpp.Methods.calculateCombination;
-import static com.nassim.calculpp.Methods.calculateConeVolume;
-import static com.nassim.calculpp.Methods.calculateCount;
-import static com.nassim.calculpp.Methods.calculateCubeVolume;
-import static com.nassim.calculpp.Methods.calculateCuboidVolume;
-import static com.nassim.calculpp.Methods.calculateCylinderVolume;
-import static com.nassim.calculpp.Methods.calculateDaysBetweenDates;
-import static com.nassim.calculpp.Methods.calculateGeometricMean;
-import static com.nassim.calculpp.Methods.calculateIdealWeight;
-import static com.nassim.calculpp.Methods.calculateLargest;
-import static com.nassim.calculpp.Methods.calculateMedian;
-import static com.nassim.calculpp.Methods.calculatePermutation;
-import static com.nassim.calculpp.Methods.calculatePopulationStandardDeviation;
-import static com.nassim.calculpp.Methods.calculatePyramidVolume;
-import static com.nassim.calculpp.Methods.calculateRange;
-import static com.nassim.calculpp.Methods.calculateSampleStandardDeviation;
-import static com.nassim.calculpp.Methods.calculateSampleVariance;
-import static com.nassim.calculpp.Methods.calculateSmallest;
-import static com.nassim.calculpp.Methods.calculateSphereVolume;
-import static com.nassim.calculpp.Methods.calculateSum;
-import static com.nassim.calculpp.Methods.calculateVariance;
+import static com.nassim.calculpp.CalculationMethods.*;
 import static java.lang.Math.sqrt;
 
-public class DisplayAllInputsActivity extends AppCompatActivity {
+public class DisplayCalculatorActivity extends AppCompatActivity {
     public static final String BACK_REFRESH = "com.example.myfirstapp.BACK_REFRESH";
     public String dataPublic;
     public String dataTab;
@@ -70,6 +47,7 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
         dataPublic = data[1];
         dataTab = data[2];
 
+        //determines selected calculator
         switch (data[0]) {
                 case "Volume":
                     setContentView(R.layout.volume_activity);
@@ -132,27 +110,27 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
                                 shapeInputs.removeAllViews();
                                 switch (position) {
                                     case 0:
-                                        shapeInputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.cube_inputs, null));
+                                        shapeInputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.cube_inputs, null));
                                         shapeIcon.setImageResource(R.drawable.cube);
                                         break;
                                     case 1:
-                                        shapeInputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.cuboid_inputs, null));
+                                        shapeInputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.cuboid_inputs, null));
                                         shapeIcon.setImageResource(R.drawable.cuboid);
                                         break;
                                     case 2:
-                                        shapeInputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.sphere_inputs, null));
+                                        shapeInputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.sphere_inputs, null));
                                         shapeIcon.setImageResource(R.drawable.sphere);
                                         break;
                                     case 3:
-                                        shapeInputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.pyramid_inputs, null));
+                                        shapeInputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.pyramid_inputs, null));
                                         shapeIcon.setImageResource(R.drawable.pyramid);
                                         break;
                                     case 4:
-                                        shapeInputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.cylinder_inputs, null));
+                                        shapeInputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.cylinder_inputs, null));
                                         shapeIcon.setImageResource(R.drawable.cylinder);
                                         break;
                                     case 5:
-                                        shapeInputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.cone_inputs, null));
+                                        shapeInputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.cone_inputs, null));
                                         shapeIcon.setImageResource(R.drawable.cone);
                                         break;
                                 }
@@ -202,11 +180,11 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
                             timeInputs.removeAllViews();
                             switch (position) {
                                 case 0:
-                                    timeInputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.between_days_inputs, null));
+                                    timeInputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.between_days_inputs, null));
                                     timeIcon.setImageResource(R.drawable.betweentime);
                                     break;
                                 case 1:
-                                    timeInputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.add_subtract_days_inputs, null));
+                                    timeInputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.add_subtract_days_inputs, null));
                                     timeIcon.setImageResource(R.drawable.addtime);
                                     break;
                             }
@@ -268,19 +246,19 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
                             bmiInputs.removeAllViews();
                             switch (position) {
                                 case 0:
-                                    bmiInputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.bmi_metric_inputs, null));
+                                    bmiInputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.bmi_metric_inputs, null));
                                     bmiIcon.setImageResource(R.drawable.bmi);
                                     break;
                                 case 1:
-                                    bmiInputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.bmi_imperial_inputs, null));
+                                    bmiInputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.bmi_imperial_inputs, null));
                                     bmiIcon.setImageResource(R.drawable.bmi);
                                     break;
                                 case 2:
-                                    bmiInputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.ideal_metric_inputs, null));
+                                    bmiInputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.ideal_metric_inputs, null));
                                     bmiIcon.setImageResource(R.drawable.weight);
                                     break;
                                 case 3:
-                                    bmiInputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.ideal_imperial_inputs, null));
+                                    bmiInputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.ideal_imperial_inputs, null));
                                     bmiIcon.setImageResource(R.drawable.weight);
                                     break;
                             }
@@ -339,11 +317,11 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
                             probabilityinputs.removeAllViews();
                             switch (position) {
                                 case 0:
-                                    probabilityinputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.probability_inputs, null));
+                                    probabilityinputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.probability_inputs, null));
                                     probabilityIcon.setImageResource(R.drawable.probability);
                                     break;
                                 case 1:
-                                    probabilityinputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.permutation_inputs, null));
+                                    probabilityinputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.permutation_inputs, null));
                                     probabilityIcon.setImageResource(R.drawable.permutation);
                                     break;
                             }
@@ -400,15 +378,15 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
                             ohminputs.removeAllViews();
                             switch (position) {
                                 case 0:
-                                    ohminputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.current_inputs, null));
+                                    ohminputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.current_inputs, null));
                                     ohmIcon.setImageResource(R.drawable.current);
                                     break;
                                 case 1:
-                                    ohminputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.resistance_inputs, null));
+                                    ohminputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.resistance_inputs, null));
                                     ohmIcon.setImageResource(R.drawable.resistance);
                                     break;
                                 case 2:
-                                    ohminputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.voltage_inputs, null));
+                                    ohminputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.voltage_inputs, null));
                                     ohmIcon.setImageResource(R.drawable.voltage);
                                     break;
                             }
@@ -494,35 +472,35 @@ public class DisplayAllInputsActivity extends AppCompatActivity {
                             areainputs.removeAllViews();
                             switch (position) {
                                 case 0:
-                                    areainputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.circle_inputs, null));
+                                    areainputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.circle_inputs, null));
                                     areaIcon.setImageResource(R.drawable.circle);
                                     break;
                                 case 1:
-                                    areainputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.ellipse_inputs, null));
+                                    areainputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.ellipse_inputs, null));
                                     areaIcon.setImageResource(R.drawable.ellipse);
                                     break;
                                 case 2:
-                                    areainputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.parallelogram_inputs, null));
+                                    areainputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.parallelogram_inputs, null));
                                     areaIcon.setImageResource(R.drawable.parallelogram);
                                     break;
                                 case 3:
-                                    areainputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.rectangle_inputs, null));
+                                    areainputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.rectangle_inputs, null));
                                     areaIcon.setImageResource(R.drawable.rectangle);
                                     break;
                                 case 4:
-                                    areainputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.square_inputs, null));
+                                    areainputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.square_inputs, null));
                                     areaIcon.setImageResource(R.drawable.square);
                                     break;
                                 case 5:
-                                    areainputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.trapezoid_inputs, null));
+                                    areainputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.trapezoid_inputs, null));
                                     areaIcon.setImageResource(R.drawable.trapezoid);
                                     break;
                                 case 6:
-                                    areainputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.triangle_edge_inputs, null));
+                                    areainputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.triangle_edge_inputs, null));
                                     areaIcon.setImageResource(R.drawable.triangleedge);
                                     break;
                                 case 7:
-                                    areainputs.addView(View.inflate(DisplayAllInputsActivity.this, R.layout.triangle_height_inputs, null));
+                                    areainputs.addView(View.inflate(DisplayCalculatorActivity.this, R.layout.triangle_height_inputs, null));
                                     areaIcon.setImageResource(R.drawable.triangleheight);
                                     break;
                             }

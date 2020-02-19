@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.nassim.calculpp.AllActivity">
+    tools:context="com.nassim.calculpp.AllFragment">
 
     <ListView
         android:id="@+id/listAll"

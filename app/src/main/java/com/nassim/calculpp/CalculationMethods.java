@@ -6,7 +6,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-public class Methods {
+public class CalculationMethods {
     static DecimalFormat form = new DecimalFormat("0.000");
 
     static String[] addTime(int day1, int hour1, int min1, double sec1, int day2, int hour2, int min2, double sec2){

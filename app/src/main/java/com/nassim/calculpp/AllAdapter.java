@@ -8,20 +8,21 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class AllList extends ArrayAdapter<String>{
+public class AllAdapter extends ArrayAdapter<String>{
     private final Activity context;
     private final String[] secondLine;
     private final String[] firstLine;
-    private final Integer[] imageId;
+    private final int[] imageId;
 
-    public AllList(Activity context,
-                   String[] firstLine, String[] secondLine, Integer[] imageId) {
+    public AllAdapter(Activity context,
+                      String[] firstLine, String[] secondLine, int[] imageId) {
         super(context, R.layout.line_view, firstLine);
         this.context = context;
         this.imageId = imageId;
         this.firstLine = firstLine;
         this.secondLine = secondLine;
     }
+
     @Override
     public View getView(int position, View view, ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();

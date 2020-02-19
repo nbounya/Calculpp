@@ -1,6 +1,7 @@
 package com.nassim.calculpp;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,47 +11,24 @@ import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 
-import static com.nassim.calculpp.MainActivity.EXTRA_MESSAGE;
+public class AllFragment extends Fragment {
+    String[] categoryName;
+    String[] categoryDescription;
+    int[] categoryImage;
 
-public class AllActivity extends Fragment {
-    String[] firstLine = {
-            "Time",
-            "Volume",
-            "Area",
-            "BMI",
-            "Statistics",
-            "Probability",
-            "Ohm's Law"
-    } ;
-    String[] secondLine = {
-            "Calculations on time.",
-            "Calculate volume of shapes.",
-            "Calculate area of shapes.",
-            "Calculate body BMI.",
-            "Calculate statistical values.",
-            "Calculate probabilities, permutations and combinations.",
-            "Calculate current, voltage and resistance."
-    } ;
-    Integer[] imageId = {
-            R.drawable.time,
-            R.drawable.volume,
-            R.drawable.area,
-            R.drawable.bmi,
-            R.drawable.statistics,
-            R.drawable.probability,
-            R.drawable.ohms
-    };
-
-    public AllActivity(){
-
+    public AllFragment(){
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.all_activity, container, false);
-        AllList allAdapter = new
-                AllList(getActivity(), firstLine, secondLine, imageId);
+        Resources res = getResources();
+        categoryName = res.getStringArray(R.array.categoryName);
+        categoryDescription = res.getStringArray(R.array.categoryDescription);
+        categoryImage = res.getIntArray(R.array.categoryImage);
+
+        View view = inflater.inflate(R.layout.all_fragment, container, false);
+        AllAdapter allAdapter = new
+                AllAdapter(getActivity(), categoryName, categoryDescription, categoryImage);
         ListView listAll;
         listAll = (ListView) view.findViewById(R.id.listAll);
         listAll.setAdapter(allAdapter);
@@ -59,16 +37,16 @@ public class AllActivity extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                inputsOpen(view, position);
+                displayCategory(view, position);
             }
         });
         return view;
     }
 
-    public void inputsOpen(View view, int position) {
-        Intent intent = new Intent(getActivity(), DisplayAllInputsActivity.class);
+    public void displayCategory(View view, int position) {
+        Intent intent = new Intent(getActivity(), DisplayCalculatorActivity.class);
         String defaultId = null;
-        switch(firstLine[+ position]){
+        switch(categoryName[+ position]){
             case "Volume":
                 defaultId = "cubeVolume";
                 break;
@@ -92,8 +70,8 @@ public class AllActivity extends Fragment {
                 break;
         }
 
-        String dataAll = firstLine[+ position] + "," + defaultId + "," + "all";
-        intent.putExtra(EXTRA_MESSAGE, dataAll);
+        String dataAll = categoryName[+ position] + "," + defaultId + "," + "all";
+        intent.putExtra("com.example.myapp.START_INPUT", dataAll);
         startActivity(intent);
     }
 

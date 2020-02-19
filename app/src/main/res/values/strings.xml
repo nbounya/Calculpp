@@ -1,3 +1,61 @@
 <resources>
     <string name="app_name">Calcul++</string>
+
+    <string-array name="categoryName">
+        <item>Time</item>
+        <item>Volume</item>
+        <item>Area</item>
+        <item>BMI</item>
+        <item>Statistics</item>
+        <item>Probability</item>
+        <item>Ohm\'s Law</item>
+    </string-array>
+
+    <string-array name="categoryDescription">
+        <item>Calculations on time.</item>
+        <item>Calculate volume of shapes.</item>
+        <item>Calculate area of shapes.</item>
+        <item>Calculate body BMI.</item>
+        <item>Calculate statistical values.</item>
+        <item>Calculate probabilities, permutations and combinations.</item>
+        <item>Calculate current, voltage and resistance.</item>
+    </string-array>
+
+    <integer-array name="categoryImage">
+        <item>@drawable/time</item>
+        <item>@drawable/volume</item>
+        <item>@drawable/area</item>
+        <item>@drawable/bmi</item>
+        <item>@drawable/statistics</item>
+        <item>@drawable/probability</item>
+        <item>@drawable/ohms</item>
+    </integer-array>
+
+    <string-array name="calculatorName">
+        <item>betweenTime</item>
+        <item>addTime</item>
+        <item>circleArea</item>
+        <item>ellipseArea</item>
+        <item>parallelogramArea</item>
+        <item>rectangleArea</item>
+        <item>squareArea</item>
+        <item>trapezoidArea</item>
+        <item>triangleEdgeArea</item>
+        <item>triangleHeightArea</item>
+        <item>bmiMetric</item>
+        <item>bmiImperial</item>
+        <item>idealWeightMetric</item>
+        <item>idealWeightImperial</item>
+        <item>currentOhm</item>
+        <item>resistanceOhm</item>
+        <item>voltageOhm</item>
+        <item>probProbabilities</item>
+        <item>permutationProbabilities</item>
+        <item>statistics</item>
+        <item>cubeVolume</item>
+        <item>sphereVolume</item>
+        <item>pyramidVolume</item>
+        <item>cylinderVolume</item>
+        <item>coneVolume</item>
+    </string-array>
 </resources>

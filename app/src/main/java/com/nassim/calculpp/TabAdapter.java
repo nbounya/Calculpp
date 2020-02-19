@@ -20,8 +20,8 @@ public class TabAdapter extends FragmentStatePagerAdapter {
     // this is for fragment tabs
     @Override
     public Fragment getItem(int position) {
-        FavoritesActivity favfragment = new FavoritesActivity();
-        AllActivity allfragment = new AllActivity();
+        FavoritesFragment favfragment = new FavoritesFragment();
+        AllFragment allfragment = new AllFragment();
         switch (position) {
             case 0:
                 return favfragment;
